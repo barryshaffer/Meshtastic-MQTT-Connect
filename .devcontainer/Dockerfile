@@ -5,7 +5,8 @@ FROM mcr.microsoft.com/devcontainers/anaconda:0-3
 COPY environment.yml* .devcontainer/noop.txt /tmp/conda-tmp/
 RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment.yml; fi \
     && rm -rf /tmp/conda-tmp
-RUN pip3 install meshtastic paho-mqtt tk cryptography
+RUN apt-get update && apt-get install -y x11-apps libx11-xcb1
+RUN pip3 install meshtastic paho-mqtt tk cryptography folium
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

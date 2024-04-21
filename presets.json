@@ -13,5 +13,35 @@
     "lat": "",
     "lon": "",
     "alt": ""
+  },
+  "misquittolocal": {
+    "name": "misquittolocal",
+    "broker": "192.168.20.121",
+    "username": "meshdev",
+    "password": "large4cats",
+    "root_topic": "msh/US/2/e/",
+    "channel": "LongFast",
+    "key": "AQ==",
+    "node_number": "3126770193",
+    "long_name": "MQTTastic",
+    "short_name": "MMC",
+    "lat": "",
+    "lon": "",
+    "alt": ""
+  },
+  "mosquitto": {
+    "name": "mosquitto",
+    "broker": "192.168.20.121",
+    "username": "meshdev",
+    "password": "large4cats",
+    "root_topic": "msh/US/2/e/",
+    "channel": "LongFast",
+    "key": "AQ==",
+    "node_number": "2882368436",
+    "long_name": "MQTTastic",
+    "short_name": "MMC",
+    "lat": "",
+    "lon": "",
+    "alt": ""
   }
 }

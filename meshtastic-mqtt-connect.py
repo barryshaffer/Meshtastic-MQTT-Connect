@@ -28,20 +28,20 @@ import re
 import google.protobuf
 
 #### Debug Options
-debug = False
-print_service_envelope = False
-print_message_packet = False
-print_text_message = False
-print_node_info =  False
-print_telemetry = False
+debug = True
+print_service_envelope = True
+print_text_message = True
+print_node_info =  True
+print_telemetry = True
 print_failed_encryption_packet = False
-print_position_report = False
+print_message_packet = True
+print_position_report = True
 color_text = False
 display_encrypted_emoji = True
 display_dm_emoji = True
-display_private_dms = False
+display_private_dms = True
 
-record_locations = False
+record_locations = True
 
 ### tcl upstream bug warning
 tcl = tk.Tcl()
@@ -51,7 +51,7 @@ print("unless the window is moved from it's original position.")
 print("The built in window auto-centering code may help with this\n\n")      
 
 ### Default settings
-mqtt_broker = "mqtt.meshtastic.org"
+mqtt_broker = "192.168.20.121"
 mqtt_port = 1883
 mqtt_username = "meshdev"
 mqtt_password = "large4cats"
@@ -329,7 +329,7 @@ def on_message(client, userdata, msg):
     if mp.decoded.portnum == portnums_pb2.TEXT_MESSAGE_APP:
         text_payload = mp.decoded.payload.decode("utf-8")
         process_message(mp, text_payload, is_encrypted)
-        # print(f"{text_payload}")
+        print(f"{text_payload}")
         
     elif mp.decoded.portnum == portnums_pb2.NODEINFO_APP:
         info = mesh_pb2.User()
